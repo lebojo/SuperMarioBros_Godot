@@ -1,0 +1,53 @@
+[gd_scene load_steps=6 format=3 uid="uid://3sjak3e5qf7d"]
+
+[ext_resource type="Texture2D" uid="uid://bxqptte7t74nr" path="res://ASSETS/IMG/smallmario.png" id="1_ep58l"]
+[ext_resource type="Script" path="res://SCRIPTS/mario.gd" id="1_kn5p6"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bshfg"]
+radius = 24.0
+height = 62.0
+
+[sub_resource type="Animation" id="Animation_f8s8o"]
+resource_name = "walk"
+length = 0.3
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [1, 2, 3]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_urwuo"]
+_data = {
+"walk": SubResource("Animation_f8s8o")
+}
+
+[node name="mario" type="CharacterBody2D"]
+script = ExtResource("1_kn5p6")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ep58l")
+hframes = 4
+vframes = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("CapsuleShape2D_bshfg")
+
+[node name="anim" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_urwuo")
+}
+
+[node name="Camera2D" type="Camera2D" parent="."]
+limit_left = 0
+limit_top = 0
+limit_bottom = 1
+drag_horizontal_enabled = true
