@@ -1,0 +1,9 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://dn88t5a0h6if2"]
+
+[ext_resource type="FontFile" uid="uid://c0vxbv4lixl7s" path="res://ASSETS/FNTS/freaky-fonts_emulogic/emulogic.ttf" id="1_jsjuj"]
+
+[resource]
+Button/font_sizes/font_size = 24
+Button/fonts/font = ExtResource("1_jsjuj")
+Label/font_sizes/font_size = 24
+Label/fonts/font = ExtResource("1_jsjuj")

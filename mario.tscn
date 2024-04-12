@@ -49,5 +49,6 @@ libraries = {
 [node name="Camera2D" type="Camera2D" parent="."]
 limit_left = 0
 limit_top = 0
+limit_right = 13504
 limit_bottom = 1
 drag_horizontal_enabled = true

@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://d2evgwxsmdsej"]
+
+[ext_resource type="Theme" uid="uid://dn88t5a0h6if2" path="res://ASSETS/new_theme.tres" id="1_m4fja"]
+
+[node name="info" type="Label"]
+offset_right = 40.0
+offset_bottom = 23.0
+theme = ExtResource("1_m4fja")
+text = "mdr"
