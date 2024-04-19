@@ -68,6 +68,5 @@ func _physics_process(delta):
 	if lst_clsn and lst_clsn.get_collider() is TileMap:
 		var tm = lst_clsn.get_collider()
 		var tm_pos = tm.local_to_map(lst_clsn.get_position())
-		var cell = tm.get_cellv(tm_pos)
-		if cell:
-			cell.flip_h = true
+		var cell = tm.get_cell_tile_data(0, tm_pos)
+		print(tm.get_cell_source_id(0, tm_pos))
